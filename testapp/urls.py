@@ -20,3 +20,17 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+from django.contrib import admin
+from django.urls import path, include #追加
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include("app.urls")) #追加
+]
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
